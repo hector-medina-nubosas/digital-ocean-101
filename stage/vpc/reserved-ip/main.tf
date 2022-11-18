@@ -33,21 +33,3 @@ module "public_ip" {
     region = "ams3"
     project_id = data.terraform_remote_state.project.outputs.id
 }
-
-# data "terraform_remote_state" "reverse-proxy" {
-#   backend = "s3"
-#   config = {
-#     bucket = "hector-medina-terraform"
-#     key = "stage/vpc/reverse-proxy.tfstate"
-#     region = "eu-west-3"
-#   }
-# }
-
-# resource "digitalocean_reserved_ip" "reserved-ip" {
-#   region = "ams3"
-# }
-
-# resource "digitalocean_reserved_ip_assignment" "ip-binding" {
-#   ip_address = digitalocean_reserved_ip.reserved-ip.ip_address
-#   droplet_id = data.terraform_remote_state.reverse-proxy.outputs.id
-# }

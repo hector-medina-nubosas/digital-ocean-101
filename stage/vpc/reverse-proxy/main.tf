@@ -72,15 +72,3 @@ data "terraform_remote_state" "public_ip" {
     region = "eu-west-3"
   }
 }
-
-# resource "digitalocean_droplet" "reverse-proxy" {
-#     image = "ubuntu-22-10-x64"
-#     name = "reverse-proxy"
-#     region = "ams3"
-#     size = "s-1vcpu-1gb"
-#     ssh_keys = [ data.terraform_remote_state.ssh-key.outputs.fingerprint ]
-#     user_data = "${templatefile("init.sh", {
-#       server_ip = data.terraform_remote_state.webserver.outputs.ip
-#     })}"
-# }
-
