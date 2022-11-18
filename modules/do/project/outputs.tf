@@ -18,3 +18,10 @@ output "updated_at" {
   value = digitalocean_project.project.updated_at
 }
 
+output "is_default" {
+  value = digitalocean_project.project.is_default
+}
+
+output "resources" {
+  value = digitalocean_project.project.resources
+}

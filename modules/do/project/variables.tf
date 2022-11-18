@@ -24,3 +24,9 @@ variable "environment" {
         error_message = "Allowed values for environment are \"Development\", \"Staging\", or \"Production\"."
     }
 }
+
+variable "is_default" {
+    description = "Sets the project as default."
+    type = bool
+    default = false
+}
