@@ -13,7 +13,7 @@ resource "digitalocean_droplet" "apache" {
     region = var.region
     size = var.size
     ssh_keys = var.ssh_keys
-    user_data = "${file("init.sh")}"
+    user_data = "${file("${path.module}/init.sh")}"
 }
 
 resource "digitalocean_project_resources" "project-resources" {

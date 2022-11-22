@@ -13,7 +13,7 @@ resource "digitalocean_droplet" "reverse-proxy" {
     region = var.region
     size = var.size
     ssh_keys = var.ssh_keys
-    user_data = "${templatefile("init.sh", {
+    user_data = "${templatefile("${path.module}/init.sh", {
       server_pattern = var.server_redirect_pattern
       server_ip = var.server_redirect_ip
     })}"
